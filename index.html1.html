@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+ 	<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Анкета перекладача</title>
+<script>
+        function calculateReward() {
+            var english = document.getElementById('english').checked;
+            var spanish = document.getElementById('spanish').checked;
+            var french = document.getElementById('french').checked;
+            var ukrainian = document.getElementById('ukrainian').checked;
+ 
+           
+            var reward = 0;
+            if (english) reward += 100;
+            if (spanish) reward += 80;
+            if (french) reward += 90;
+            if (ukrainian) reward += 1000;
+ 
+         
+            document.getElementById('result').innerHTML = 'Розмір винагороди: $' + reward;
+        }
+ 
+        function clearAll() {
+ 
+            document.getElementById('english').checked = false;
+            document.getElementById('spanish').checked = false;
+            document.getElementById('french').checked = false;
+            document.getElementById('ukrainian').checked = false;
+ 
+      
+            document.getElementById('result').innerHTML = '';
+        }
+</script>
+</head>
+<body>
+<h1>Анкета перекладача</h1>
+<p>Вкажіть мови, якими ви володієте:</p>
+ 
+    <label for="english">Англійська:</label>
+<input type="checkbox" id="english"><br>
+ 
+    <label for="spanish">Іспанська:</label>
+<input type="checkbox" id="spanish"><br>
+ 
+    <label for="french">Французька:</label>
+<input type="checkbox" id="french"><br>
+ 
+    <label for="ukrainian">Українська:</label>
+<input type="checkbox" id="ukrainian"><br>
+ 
+    <button onclick="calculateReward()">Розрахувати винагороду</button>
+<button onclick="clearAll()">Відмінити все</button>
+ 
+    <p id="result"></p>
+</body>
+</html>
